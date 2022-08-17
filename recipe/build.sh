@@ -5,9 +5,6 @@ set -ex
 # No CMake find modules for dependencies provided, so we need to add them manually.
 cp -v $RECIPE_DIR/cmake/* cmake/
 
-# Fix fenv.h for OSX
-cp -v $RECIPE_DIR/include/* src/
-
 cmake \
     $CMAKE_ARGS \
     -B _build -G Ninja \

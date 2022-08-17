@@ -20,6 +20,8 @@ source:
       - patches/nauty_thread_local.patch
       # See https://github.com/qcscine/molassembler/issues/7
       - patches/no_duplicate.patch
+      # https://github.com/qcscine/molassembler/issues/5
+      - patches/no_cfenv.patch
   - url: https://github.com/qcscine/development-utils/archive/refs/tags/5.0.1.tar.gz
     sha256: 089ca500fc191e04a968ea166d2fe80178b227bc2e6d3926523fa2eee5f6492d
     folder: dev
@@ -28,7 +30,7 @@ source:
       - patches/pybind11_pin.patch
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win]
 
   run_exports:

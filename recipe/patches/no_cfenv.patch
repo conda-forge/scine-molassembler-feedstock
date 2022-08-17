@@ -1,0 +1,28 @@
+diff --git a/src/Molassembler/DistanceGeometry/TetrangleSmoothing.cpp b/src/Molassembler/DistanceGeometry/TetrangleSmoothing.cpp
+index 83cb413d..e7cb9196 100644
+--- a/src/Molassembler/DistanceGeometry/TetrangleSmoothing.cpp
++++ b/src/Molassembler/DistanceGeometry/TetrangleSmoothing.cpp
+@@ -11,7 +11,6 @@
+ #include "Molassembler/Temple/Invoke.h"
+ 
+ #include <Eigen/Dense>
+-#include <cfenv>
+ 
+ namespace Scine {
+ namespace Molassembler {
+@@ -865,7 +864,6 @@ struct TetrangleLimits {
+ };
+ 
+ unsigned tetrangleSmooth(Eigen::Ref<Eigen::MatrixXd> bounds) {
+-  feenableexcept(FE_DIVBYZERO | FE_INVALID | FE_OVERFLOW);
+ 
+   const unsigned N = bounds.cols();
+ 
+@@ -929,7 +927,6 @@ unsigned tetrangleSmooth(Eigen::Ref<Eigen::MatrixXd> bounds) {
+     ++iterations;
+   } while(changedSomething);
+ 
+-  fedisableexcept(FE_DIVBYZERO | FE_INVALID | FE_OVERFLOW);
+   return iterations;
+ }
+ 
