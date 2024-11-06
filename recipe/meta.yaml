@@ -1,5 +1,5 @@
 {% set name = "scine-molassembler" %}
-{% set version = "1.2.1" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name }}
@@ -12,7 +12,7 @@ package:
 
 source:
   - url: https://github.com/qcscine/molassembler/archive/refs/tags/{{ version }}.tar.gz
-    sha256: c9fea41d383b7f54cf8a3ed4dabebe9e942fe3ef5b47895e3533e8ce42dacd38
+    sha256: 1425b0dcebaab9e70f9049f73570e443a9e0b58647e5895de2de916296e7f0bc
     patches:
       # See https://github.com/qcscine/molassembler/issues/4
       - patches/nlohmann_json.patch
@@ -30,7 +30,7 @@ source:
       - patches/pybind11_pin.patch
 
 build:
-  number: 6
+  number: 0
   skip: true  # [win]
 
   run_exports:
